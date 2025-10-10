@@ -214,6 +214,10 @@ def show_data_explorer():
 # ----------------- ML PLAYGROUND -----------------
 def show_ml_playground():
     st.header("Machine Learning Playground")
+    st.caption(
+        "Tip: For the default Lending Club dataset, use **'loan_status'** "
+        "as the target column (1 = default, 0 = paid)."
+    )
     if st.session_state.df_filtered is None:
         st.info("Please upload and process a CSV in Data Explorer first.")
         return
