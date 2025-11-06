@@ -1,0 +1,16 @@
+# Ignore raw data
+ml_project/data/raw/
+
+# Ignore large model files
+ml_project/models/loan_model_pipeline.pkl
+
+# Ignore notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore environment files
+.env
+*.env
