@@ -1,4 +1,4 @@
-import streamlit as st
+nimport streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -68,7 +68,7 @@ def show_professional_summary():
         """)
     with col2:
         try:
-            st.write("**My niece and I at Volcanoes National Park**")
+            st.write("**Me and my niece at Volcanoes National Park**")
             image = Image.open("ml_project/images/volcano.jpg")
             # Rotate 90 degrees clockwise
             image = image.rotate(-90, expand=True)
