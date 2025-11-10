@@ -30,9 +30,25 @@ if "df" not in st.session_state:
 # ----------------- LOAD ML MODEL -----------------
 @st.cache_resource
 def load_model():
-    return joblib.load("C:/Users/esteb/PythonProjects/Portfolio/ml_project/models/loan_model_pipeline_compressed.pkl")
+    # Get the directory where this .py file lives
+    base_dir = os.path.dirname(__file__)
+    # Construct the relative path to your model
+    model_path = os.path.join(base_dir, "ml_project", "models", "loan_model_pipeline_compressed.pkl")
+
+    # Optional debugging info
+    #st.write(f"🔍 Looking for model at: {model_path}")
+
+    # Check for file existence
+    if not os.path.exists(model_path):
+        st.error(f"❌ Model file not found at: {model_path}")
+        return None
+
+    return joblib.load(model_path)
 
 model_pipeline = load_model()
+
+if model_pipeline is None:
+    st.stop()
 
 # ----------------- FUNCTIONS -----------------
 def show_professional_summary():
