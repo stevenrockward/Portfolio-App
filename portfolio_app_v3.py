@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import joblib
 import os
-import shap
 import plotly.graph_objects as go
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
